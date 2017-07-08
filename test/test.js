@@ -8,8 +8,9 @@ let GRE_WS = /\s+/g;
 Test('RenderToString', t => {
     let library = Library.create();
     let htmlPretty = Tags.renderToString(library, 'x-products', {}, true);
-    let htmlMin = Tags.renderToString(library, 'x-products', {}, false);
     compareWithSample(t, htmlPretty);
+    let htmlMin = Tags.renderToString(library, 'x-products', {}, false);
+    t.equal(htmlPretty.length > htmlMin.length, true);
     let noWs1 = htmlPretty.replace(GRE_WS, '');
     let noWs2 = htmlMin.replace(GRE_WS, '');
     t.equal(noWs1.length, noWs2.length);
