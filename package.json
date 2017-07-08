@@ -1,0 +1,24 @@
+{
+  "name": "@cranbee/tags",
+  "version": "0.1.0",
+  "description": "Cranbee Tags Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js",
+    "patch-release": "npm version patch && npm publish --access=public && git push --follow-tags",
+    "minor-release": "npm version minor && npm publish --access=public && git push --follow-tags",
+    "generate-sample": "node test/generator.js"
+  },
+  "author": "DMA <dma@cranbee.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cranbee/tags.git"
+  },
+  "dependencies": {
+    "@cranbee/template": "^0.4.0"
+  },
+  "devDependencies": {
+    "tape": "^4.6.3"
+  }
+}
