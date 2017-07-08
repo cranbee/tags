@@ -1,0 +1,8 @@
+<div class="menu {mods}">
+    <ul>
+        <li each="item in items" class="menu__item {item.mods}">
+            <a fi="item.isActive" href="{item.url}">{item.title}</a>
+            <span if="item.isActive">{item.title}</span>
+        </li>
+    </ul>
+</div>

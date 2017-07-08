@@ -1,0 +1,6 @@
+<div class="header">
+    <div class="header__logo"></div>
+    <x-menu type="header" active-item="{activeMenuItem}"/>
+    <a if="user" class="header__user" on-click="{showUserMenu}">{user.name}</a>
+    <a fi="user" href="/login" class="header__login">Login</a>
+</div>
