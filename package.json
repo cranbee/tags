@@ -10,7 +10,7 @@
     "generate-sample": "node test/generator.js"
   },
   "author": "DMA <dma@cranbee.com>",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/cranbee/tags.git"
