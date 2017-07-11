@@ -1,9 +1,9 @@
 // object => object
 function render($) {
-    return $.template('x-header', {
+    return $.template("x-header", {
         activeMenuItem: $.props.activeMenuItem,
         user: {
-            name: 'Root'
+            name: "Root"
         },
         showUserMenu: () => {
             // show user menu

@@ -1,15 +1,15 @@
 let ITEMS = [
     {
-        title: 'Products',
-        url: '/products'
+        title: "Products",
+        url: "/products"
     },
     {
-        title: 'Blog',
-        url: '/blog'
+        title: "Blog",
+        url: "/blog"
     },
     {
-        title: 'Contacts',
-        url: '/contacts'
+        title: "Contacts",
+        url: "/contacts"
     }
 ];
 
@@ -17,13 +17,13 @@ let ITEMS = [
 function render($) {
     let type = $.props.type;
     let activeItem = $.props.activeItem;
-    return $.template('x-menu', {
+    return $.template("x-menu", {
         mods: `_${type}`,
         items: ITEMS.map((item, index) => ({
             title: item.title,
             url: item.url,
             isActive: index === activeItem,
-            mods: index === activeItem ? '_active' : ''
+            mods: index === activeItem ? "_active" : ""
         }))
     });
 }
