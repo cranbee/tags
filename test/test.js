@@ -1,15 +1,14 @@
 let FS = require("fs");
 let Library = require("./library.js");
-let Tags = require("../index.js");
 let Test = require("tape");
 
 let GRE_WS = /\s+/g;
 
 Test("RenderToString", t => {
     let library = Library.create();
-    let htmlPretty = Tags.renderToString(library, "x-products", 2);
+    let htmlPretty = library.renderToString("x-products", 2);
     compareWithSample(t, htmlPretty);
-    let htmlMin = Tags.renderToString(library, "x-products");
+    let htmlMin = library.renderToString("x-products");
     t.equal(htmlPretty.length > htmlMin.length, true);
     let noWs1 = htmlPretty.replace(GRE_WS, "");
     let noWs2 = htmlMin.replace(GRE_WS, "");
