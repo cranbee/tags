@@ -7,7 +7,7 @@ let GRE_WS = /\s+/g;
 
 Test("RenderToString", t => {
     let library = Library.create();
-    let htmlPretty = Tags.renderToString(library, "x-products", {}, 2);
+    let htmlPretty = Tags.renderToString(library, "x-products", 2);
     compareWithSample(t, htmlPretty);
     let htmlMin = Tags.renderToString(library, "x-products");
     t.equal(htmlPretty.length > htmlMin.length, true);
