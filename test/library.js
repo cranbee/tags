@@ -14,11 +14,11 @@ function create() {
 }
 
 // (object, string) => void
-function addTag(library, name) {
-    let tag = require(`./tags/${name}.js`);
-    let html = FS.readFileSync(`${__dirname}/templates/${name}.html`, "utf-8");
+function addTag(library, type) {
+    let tag = require(`./tags/${type}.js`);
+    let html = FS.readFileSync(`${__dirname}/templates/${type}.html`, "utf-8");
     let template = Template.parse(html);
-    library.addTag(name, tag, template);
+    library.addTag(type, tag, template);
 }
 
 module.exports = {
