@@ -1,6 +1,6 @@
 // object => object
-function render($) {
-    return $.template("x-products", {
+function render(ctx) {
+    return ctx.template({
         products: [
             {
                 id: 1,

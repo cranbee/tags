@@ -1,7 +1,7 @@
 // object => object
-function render($) {
-    return $.template("x-footer", {
-        activeMenuItem: $.props.activeMenuItem
+function render(ctx) {
+    return ctx.template({
+        activeMenuItem: ctx.props.activeMenuItem
     });
 }
 

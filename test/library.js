@@ -5,20 +5,20 @@ let Template = require("@cranbee/template");
 // () => object
 function create() {
     let library = Tags.library();
-    addTagWithTemplate(library, "x-card");
-    addTagWithTemplate(library, "x-footer");
-    addTagWithTemplate(library, "x-header");
-    addTagWithTemplate(library, "x-menu");
-    addTagWithTemplate(library, "x-products");
+    addTag(library, "x-card");
+    addTag(library, "x-footer");
+    addTag(library, "x-header");
+    addTag(library, "x-menu");
+    addTag(library, "x-products");
     return library;
 }
 
 // (object, string) => void
-function addTagWithTemplate(library, name) {
+function addTag(library, name) {
+    let tag = require(`./tags/${name}.js`);
     let html = FS.readFileSync(`${__dirname}/templates/${name}.html`, "utf-8");
     let template = Template.parse(html);
-    library.addTemplate(name, template);
-    library.addTag(name, require(`./tags/${name}.js`));
+    library.addTag(name, tag, template);
 }
 
 module.exports = {

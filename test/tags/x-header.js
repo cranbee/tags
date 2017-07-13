@@ -1,10 +1,8 @@
 // object => object
-function render($) {
-    return $.template("x-header", {
-        activeMenuItem: $.props.activeMenuItem,
-        user: {
-            name: "Root"
-        },
+function render(ctx) {
+    return ctx.template({
+        activeMenuItem: ctx.props.activeMenuItem,
+        user: { name: "Root" },
         showUserMenu: () => {
             // show user menu
         }

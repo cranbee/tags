@@ -14,10 +14,10 @@ let ITEMS = [
 ];
 
 // object => object
-function render($) {
-    let type = $.props.type;
-    let activeItem = $.props.activeItem;
-    return $.template("x-menu", {
+function render(ctx) {
+    let type = ctx.props.type;
+    let activeItem = ctx.props.activeItem;
+    return ctx.template({
         mods: `_${type}`,
         items: ITEMS.map((item, index) => ({
             title: item.title,
