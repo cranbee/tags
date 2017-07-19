@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "node test/test.js",
-    "patch-release": "npm version patch && npm publish --access=public && git push --follow-tags",
-    "minor-release": "npm version minor && npm publish --access=public && git push --follow-tags",
+    "build": "babel src -d lib",
+    "patch-release": "npm run build && npm version patch && npm publish --access=public",
+    "minor-release": "npm run build && npm version minor && npm publish --access=public",
     "generate-sample": "node test/generator.js"
   },
   "author": "DMA <dma@cranbee.com>",
@@ -19,6 +20,8 @@
     "@cranbee/template": "^0.5.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
     "tape": "^4.6.3"
   }
 }
