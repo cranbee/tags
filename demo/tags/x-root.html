@@ -1,0 +1,18 @@
+<div class="x_root">
+    <div class="x_root__buttons">
+        <button disabled="{addRowsDisabled}" on-click="{addRows}">+10 row</button>
+        <button disabled="{delRowsDisabled}" on-click="{delRows}">-10 row</button>
+        <button disabled="{addColsDisabled}" on-click="{addCols}">+10 col</button>
+        <button disabled="{delColsDisabled}" on-click="{delCols}">-10 col</button>
+        <button disabled="{startDisabled}" on-click="{start}">Start</button>
+        <button disabled="{stopDisabled}" on-click="{stop}">Stop</button>
+    </div>
+    <div class="x_root__info">{info}</div>
+    <div class="x_root__table">
+        <x-table rows="{rows}"
+                 cols="{cols}"
+                 row="{row}"
+                 col="{col}"
+                 on-select="{select}"/>
+    </div>
+</div>

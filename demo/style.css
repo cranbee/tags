@@ -1,0 +1,31 @@
+body {
+    font-size: 14px;
+}
+
+.x_root__buttons {
+    margin-bottom: 20px;
+}
+
+.x_root__buttons button {
+    line-height: 24px;
+    margin-right: 5px;
+}
+
+.x_root__info {
+    margin-bottom: 20px;
+}
+
+.x_table table {
+    border-collapse: collapse;
+}
+
+.x_table td {
+    border: 1px solid #ccc;
+    padding: 4px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.x_table td._selected {
+    background-color: #cfc;
+}
