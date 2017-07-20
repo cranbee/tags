@@ -7,6 +7,7 @@ function create(library, node) {
     let ctx = Object.assign({}, library.getCtx());
     ctx.props = prepareProps(node.props);
     ctx.children = node.children;
+    ctx.state = {};
     ctx.domNode = undefined;
     ctx.template = data => library.renderTemplate(type, data);
     if (tag.init) {
