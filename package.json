@@ -4,11 +4,7 @@
   "description": "Cranbee Tags Framework",
   "main": "index.js",
   "scripts": {
-    "test": "node test/test.js",
-    "build": "babel src -d lib",
-    "patch-release": "npm run build && npm version patch && npm publish --access=public",
-    "minor-release": "npm run build && npm version minor && npm publish --access=public",
-    "generate-sample": "node test/generator.js"
+    "test": "make test"
   },
   "author": "DMA <dma@cranbee.com>",
   "license": "MIT",
