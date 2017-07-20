@@ -4,7 +4,7 @@ let Tools = require("./tools.js");
 function create(library, node) {
     let type = node.type;
     let tag = library.getTag(type);
-    let ctx = Object.assign({}, library.getCtx());
+    let ctx = Object.create(library.getCtx());
     ctx.props = prepareProps(node.props);
     ctx.children = node.children;
     ctx.state = {};
