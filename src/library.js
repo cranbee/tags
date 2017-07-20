@@ -43,7 +43,13 @@ function renderToString($, type, indent = 0) {
 function mount($, type, domNode) {
     let node = { type, props: {}, children: [] };
     let wrap = createWrap($, node);
-    wrap.mount(domNode);
+    if (domNode.innerHTML === "") {
+        let newDomNode = wrap.renderToDom();
+        domNode.parentNode.replaceChild(newDomNode, domNode);
+        wrap.mount(newDomNode);
+    } else {
+        wrap.mount(domNode);
+    }
     return () => wrap.update(node);
 }
 
