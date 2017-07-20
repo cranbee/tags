@@ -13,7 +13,8 @@ function create(ctx = {}) {
     };
     let extApi = Tools.instance($, {
         addTag,
-        renderToString
+        renderToString,
+        mount
     });
     let intApi = Tools.instance($, {
         getCtx,
