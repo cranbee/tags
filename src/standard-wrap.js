@@ -74,7 +74,7 @@ function mount($, domNode) {
         throw Error(`Invalid mount for a "${$.node.type}" node`);
     }
     $.childWraps.forEach((childWrap, index) => {
-        $.childWraps.mount(childDomNodes[index]);
+        childWrap.mount(childDomNodes[index]);
     });
     $.domNode = domNode;
 }
