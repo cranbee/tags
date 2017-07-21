@@ -184,13 +184,15 @@ function updateChildren($, node) {
 
 // object => object
 function getAttrs(props) {
-    let ignoredKeys = ['key', 'ref'];
     let attrs = {};
     Object.keys(props).forEach(key => {
-        if (ignoredKeys.includes(key)) {
+        if (key === "key") {
             return;
         }
-        if (key.startsWith('on-')) {
+        if (key === "ref") {
+            return;
+        }
+        if (key.startsWith("on-")) {
             return;
         }
         attrs[key] = props[key];
