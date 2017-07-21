@@ -34,7 +34,7 @@ function mount($, domNode) {
 
 // (object, object) => void
 function update($, node) {
-    if (node.type !== '#') {
+    if (node.type !== "#") {
         throw Error("Invalid update for a text node");
     }
     if (node.text !== $.text) {
