@@ -1,7 +1,7 @@
 <div class="products">
     <x-header title="Products" active-menu-item="{0}"/>
     <div class="products__list">
-        <x-card each="product in products" product="{product}"/>
+        <x-card each="{product in products}" product="{product}"/>
     </div>
     <x-footer active-menu-item="{0}"/>
 </div>

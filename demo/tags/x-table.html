@@ -1,7 +1,7 @@
 <div class="x_table">
     <table>
-        <tr each="row in rows">
-            <td each="cell in row.cells" class="{cell.mod}" on-click="{cell.click}">
+        <tr each="{row in rows}">
+            <td each="{cell in row.cells}" class="{cell.mod}" on-click="{cell.click}">
                 {cell.value}
             </td>
         </tr>
