@@ -1,7 +1,11 @@
-.PHONY: all sample test patch minor clean
+.PHONY: default lib demo sample test clean patch minor
 
-all:
+default: lib demo
+
+lib:
 	npx babel src -d lib
+
+demo:
 	npx webpack --config demo/webpack.config.js
 
 sample:
@@ -10,12 +14,12 @@ sample:
 test:
 	node test/test.js
 
+clean:
+	rm -rf lib
+	rm -f demo/bundle.js
+
 patch:
 	npm version patch && npm publish --access=public
 
 minor:
 	npm version minor && npm publish --access=public
-
-clean:
-	rm -rf lib
-	rm -f demo/bundle.js
