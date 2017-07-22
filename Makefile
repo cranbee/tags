@@ -1,10 +1,9 @@
 .PHONY: default install lib demo sample test clean patch minor
 
-default: install lib demo
+default: install lib demo test
 
 install:
 	npm install
-	npm update
 
 lib:
 	npx babel src -d lib
