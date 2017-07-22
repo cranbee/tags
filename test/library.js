@@ -16,7 +16,7 @@ function create() {
 // (object, string) => void
 function addTag(library, type) {
     let tag = require(`./tags/${type}.js`);
-    let html = FS.readFileSync(`${__dirname}/templates/${type}.html`, "utf-8");
+    let html = FS.readFileSync(`${__dirname}/tags/${type}.html`, "utf-8");
     let template = Template.parse(html);
     library.addTag(type, tag, template);
 }
