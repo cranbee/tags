@@ -16,7 +16,7 @@ Test("RenderToString", t => {
     t.end();
 });
 
-// (object, string) => void
+// (object, string) => undefined
 function compareWithSample(t, html) {
     let sample = FS.readFileSync(`${__dirname}/sample.html`, "utf-8");
     let lines1 = html.split("\n");

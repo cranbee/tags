@@ -1,4 +1,4 @@
-// object => void
+// object => undefined
 function init(ctx) {
     ctx.state.rows = 10;
     ctx.state.cols = 10;

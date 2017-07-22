@@ -56,7 +56,7 @@ function renderToDom($) {
     return domNode;
 }
 
-// (object, object) => void
+// (object, object) => undefined
 function mount($, domNode) {
     if (domNode.nodeType !== Node.ELEMENT_NODE) {
         throw Error(`Invalid mount for a "${$.node.type}" node`);
@@ -79,7 +79,7 @@ function mount($, domNode) {
     $.domNode = domNode;
 }
 
-// (object, object) => void
+// (object, object) => undefined
 function update($, node) {
     if (node.type !== $.node.type) {
         throw Error(`Invalid update for a "${$.node.type}" node`);
@@ -97,7 +97,7 @@ function unmount($) {
     return domNode;
 }
 
-// (object, object) => void
+// (object, object) => undefined
 function updateAttrs($, node) {
     let attrs1 = getAttrs($.node.props);
     let attrs2 = getAttrs(node.props);
@@ -117,7 +117,7 @@ function updateAttrs($, node) {
     });
 }
 
-// (object, object) => void
+// (object, object) => undefined
 function updateEvents($, node) {
     let events1 = getEvents($.node.props);
     let events2 = getEvents(node.props);
@@ -136,7 +136,7 @@ function updateEvents($, node) {
     });
 }
 
-// (object, object) => void
+// (object, object) => undefined
 function updateChildren($, node) {
     // Prepare:
     let children1 = $.node.children;
@@ -204,7 +204,7 @@ function getAttrs(props) {
 function getEvents(props) {
     let events = {};
     Object.keys(props).forEach(key => {
-        if (key.startsWith('on-')) {
+        if (key.startsWith("on-")) {
             events[key.substr(3)] = props[key];
         }
     });

@@ -1,7 +1,7 @@
 let Tags = require("../index.js");
 let Template = require("@cranbee/template");
 
-// () => void
+// () => undefined
 function main() {
     let ctx = {};
     let library = Tags.library(ctx);
@@ -11,7 +11,7 @@ function main() {
     ctx.refresh = library.mount("x-root", domNode);
 }
 
-// (object, string) => void
+// (object, string) => undefined
 function addTag(library, name) {
     let tag = require(`./tags/${name}.js`);
     let html = require(`./tags/${name}.html`);

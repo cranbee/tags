@@ -26,10 +26,12 @@ function create(ctx = {}) {
     return extApi;
 }
 
-// (object, string, object, array | void) => void
+// (object, string, object, array | undefined) => undefined
 function addTag($, type, tag, template) {
     $.tags[type] = tag;
-    $.templates[type] = template;
+    if (template) {
+        $.templates[type] = template;
+    }
 }
 
 // (object, string, number) => string
@@ -39,7 +41,7 @@ function renderToString($, type, indent = 0) {
     return wrap.renderToString(indent, 0);
 }
 
-// (object, string, object) => (() => void)
+// (object, string, object) => (() => undefined)
 function mount($, type, domNode) {
     let node = { type, props: {}, children: [] };
     let wrap = createWrap($, node);
@@ -58,7 +60,7 @@ function getCtx($) {
     return $.ctx;
 }
 
-// (object, string) => object | void
+// (object, string) => object | undefined
 function getTag($, type) {
     return $.tags[type];
 }

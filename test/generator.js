@@ -1,7 +1,7 @@
 let FS = require("fs");
 let Library = require("./library.js");
 
-// () => void
+// () => undefined
 function main() {
     let library = Library.create();
     let html = library.renderToString("x-products", 2);

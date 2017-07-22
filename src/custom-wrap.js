@@ -37,7 +37,7 @@ function renderToDom($) {
     return $.childWrap.renderToDom();
 }
 
-// (object, object) => void
+// (object, object) => undefined
 function mount($, domNode) {
     $.ctx.domNode = domNode;
     $.childWrap.mount(domNode);
@@ -46,7 +46,7 @@ function mount($, domNode) {
     }
 }
 
-// (object, object) => void
+// (object, object) => undefined
 function update($, node) {
     if (node.type !== $.type) {
         throw Error(`Invalid update for a "${$.type}" node`);

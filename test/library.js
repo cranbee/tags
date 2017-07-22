@@ -13,7 +13,7 @@ function create() {
     return library;
 }
 
-// (object, string) => void
+// (object, string) => undefined
 function addTag(library, type) {
     let tag = require(`./tags/${type}.js`);
     let html = FS.readFileSync(`${__dirname}/tags/${type}.html`, "utf-8");

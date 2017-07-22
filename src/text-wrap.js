@@ -24,7 +24,7 @@ function renderToDom($) {
     return document.createTextNode($.text);
 }
 
-// (object, object) => void
+// (object, object) => undefined
 function mount($, domNode) {
     if (domNode.nodeType !== Node.TEXT_NODE) {
         throw Error("Invalid mount for a text node");
@@ -32,7 +32,7 @@ function mount($, domNode) {
     $.domNode = domNode;
 }
 
-// (object, object) => void
+// (object, object) => undefined
 function update($, node) {
     if (node.type !== "#") {
         throw Error("Invalid update for a text node");
