@@ -1,6 +1,10 @@
-.PHONY: default lib demo sample test clean patch minor
+.PHONY: default install lib demo sample test clean patch minor
 
-default: lib demo
+default: install lib demo
+
+install:
+	npm install
+	npm update
 
 lib:
 	npx babel src -d lib
@@ -16,7 +20,9 @@ test:
 
 clean:
 	rm -rf lib
+	rm -rf node_modules
 	rm -f demo/bundle.js
+	rm -f package-lock.json
 
 patch:
 	npm version patch && npm publish --access=public
