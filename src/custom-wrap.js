@@ -8,7 +8,7 @@ function create(library, node) {
     ctx.props = prepareProps(node.props);
     ctx.children = node.children;
     ctx.state = {};
-    ctx.domNode = undefined;
+    ctx.domNode = null;
     ctx.template = data => library.renderTemplate(type, data);
     if (tag.init) {
         tag.init(ctx);
@@ -69,7 +69,7 @@ function unmount($) {
         $.tag.willUnmount($.ctx);
     }
     let domNode = $.ctx.domNode;
-    $.ctx.domNode = undefined;
+    $.ctx.domNode = null;
     return domNode;
 }
 

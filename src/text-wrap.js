@@ -4,7 +4,7 @@ let Tools = require("./tools.js");
 function create(library, node) {
     return Tools.instance({
         text: node.text,
-        domNode: undefined
+        domNode: null
     }, {
         renderToString,
         renderToDom,
@@ -46,7 +46,7 @@ function update($, node) {
 // object => object
 function unmount($) {
     let domNode = $.domNode;
-    $.domNode = undefined;
+    $.domNode = null;
     return domNode;
 }
 

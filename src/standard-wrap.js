@@ -6,7 +6,7 @@ function create(library, node) {
         library,
         node,
         childWraps: node.children.map(library.createWrap),
-        domNode: undefined
+        domNode: null
     }, {
         renderToString,
         renderToDom,
@@ -93,7 +93,7 @@ function update($, node) {
 // object => object
 function unmount($) {
     let domNode = $.domNode;
-    $.domNode = undefined;
+    $.domNode = null;
     return domNode;
 }
 
