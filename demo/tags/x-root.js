@@ -43,12 +43,12 @@ function render(ctx) {
                     ctx.refresh();
                     return;
                 }
-                frames += 1;
+                frames++;
                 ctx.state.fps = Math.trunc(frames / (Date.now() - startTime) * 1000);
-                ctx.state.col += 1;
+                ctx.state.col++;
                 if (ctx.state.col >= ctx.state.cols) {
                     ctx.state.col = 0;
-                    ctx.state.row += 1;
+                    ctx.state.row++;
                 }
                 if (ctx.state.row >= ctx.state.rows) {
                     ctx.state.row = 0;
