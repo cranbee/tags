@@ -6,7 +6,8 @@ function create(library, node) {
         library,
         node,
         childWraps: node.children.map(library.createWrap),
-        domNode: null
+        domNode: null,
+        events: null
     }, {
         renderToString,
         renderToDom,
@@ -65,9 +66,14 @@ function mount($, domNode) {
     if (tagName !== $.node.type) {
         throw Error(`Invalid mount for a "${$.node.type}" node`);
     }
-    let events = getEvents($.node.props);
-    Object.keys(events).forEach(eType => {
-        domNode.addEventListener(eType, events[eType]);
+    $.events = getEvents($.node.props);
+    Object.keys($.events).forEach(eType => {
+        domNode.addEventListener(eType, e => {
+            let handler = $.events[eType];
+            if (handler) {
+                handler(e);
+            }
+        });
     });
     let childDomNodes = domNode.childNodes;
     if ($.childWraps.length !== childDomNodes.length) {
@@ -119,21 +125,7 @@ function updateAttrs($, node) {
 
 // (object, object) => undefined
 function updateEvents($, node) {
-    let events1 = getEvents($.node.props);
-    let events2 = getEvents(node.props);
-    Object.keys(events2).forEach(key => {
-        let h1 = events1[key];
-        let h2 = events2[key];
-        if (h1 === h2) {
-            return;
-        }
-        if (h1) {
-            $.domNode.removeEventListener(key, h1);
-        }
-        if (h2) {
-            $.domNode.addEventListener(key, h2);
-        }
-    });
+    $.events = getEvents(node.props);
 }
 
 // (object, object) => undefined
